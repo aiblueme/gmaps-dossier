@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GOOGLE MAPS SCRAPING — FIELD RESEARCH 2025–2026</title>
+<!-- FIX: HIGH-SEO — meta description, Open Graph, canonical, favicon -->
+<meta name="description" content="Comprehensive 2025–2026 field research dossier on Google Maps scraping: official APIs, third-party services, open-source tools, browser automation, anti-detection, legal landscape, and recommendations.">
+<link rel="canonical" href="">
+<meta property="og:title" content="Google Maps Scraping — Field Research 2025–2026">
+<meta property="og:description" content="Comprehensive 2025–2026 field research dossier on Google Maps scraping: official APIs, third-party services, browser automation, anti-detection, legal landscape, and recommendations.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%231A1A1A'/><text x='2' y='13' font-size='13' font-family='monospace' fill='%23C97D10'>G</text></svg>">
+<title>Google Maps Scraping — Field Research 2025–2026</title><!-- FIX: HIGH — title to Title Case -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:auto}
+html{scroll-behavior:auto}/* FIX: LOW — smooth scroll respects reduced-motion */@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 :root{
-  --bg:#F5F0E8;--bg2:#EDE8DC;--bg3:#E0DACe;
+  --bg:#F5F0E8;--bg2:#EDE8DC;--bg3:#E0DACE;/* FIX: MED — hex typo lowercase e */
   --ink:#1A1A1A;--ink2:#3D3D3D;--ink3:#666;
   --orange:#C97D10;--orange-dim:#8A5508;--orange-pale:rgba(201,125,16,0.10);
   --red:#B03020;--green:#2A7A45;
@@ -25,18 +32,18 @@ body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13p
 /* ── SIDEBAR ── */
 #sb{width:var(--sw);min-width:var(--sw);background:var(--ink);color:var(--bg);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;display:flex;flex-direction:column;scrollbar-width:thin;scrollbar-color:#333 #1A1A1A}
 #sb-hd{padding:12px 10px 8px;border-bottom:2px solid var(--orange)}
-#sb-hd .code{font-size:9px;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}
+#sb-hd .code{font-size:10px;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}/* FIX: MED — 9px→10px */
 #sb-hd h2{font-family:var(--head);font-size:15px;font-weight:800;color:#fff;line-height:1.1;margin-top:3px;text-transform:uppercase}
 #sb-hd .meta{font-size:10px;color:#666;margin-top:3px}
 #sw{padding:7px 10px;border-bottom:1px solid #2A2A2A}
 #search{width:100%;background:#222;border:1px solid #444;color:#fff;font-family:var(--mono);font-size:11px;padding:4px 6px;outline:none}
 #search:focus{border-color:var(--orange)}
-#sc{font-size:9px;color:#555;margin-top:3px;min-height:12px}
+#sc{font-size:10px;color:#555;margin-top:3px;min-height:12px}/* FIX: MED — 9px→10px */
 #nav{flex:1;overflow-y:auto;padding:4px 0}
-.ni{display:flex;align-items:flex-start;padding:3px 10px;cursor:pointer;text-decoration:none;color:#999;font-family:var(--mono);font-size:10px;line-height:1.3;gap:5px;border-left:2px solid transparent}
+.ni{display:flex;align-items:flex-start;padding:3px 10px;cursor:pointer;text-decoration:none;color:#999;font-family:var(--mono);font-size:12px;line-height:1.3;gap:5px;border-left:2px solid transparent}/* FIX: MED — nav font 10px→12px */
 .ni:hover{background:#222;color:#fff}
 .ni.active{background:#242424;color:#fff;border-left-color:var(--orange)}
-.ni .nn{color:var(--orange);font-size:9px;min-width:16px;margin-top:1px}
+.ni .nn{color:var(--orange);font-size:10px;min-width:16px;margin-top:1px}/* FIX: MED — 9px→10px */
 
 /* ── MAIN ── */
 #main{margin-left:var(--sw);flex:1;min-width:0}
@@ -46,7 +53,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13p
 #ph h1{font-family:var(--head);font-size:28px;font-weight:800;text-transform:uppercase;line-height:1;color:#fff}
 #ph .sub{font-size:10px;color:#888;margin-top:4px;line-height:1.5}
 .stamps{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-.stamp{font-family:var(--mono);font-size:9px;padding:2px 7px;border:1px solid;text-transform:uppercase;letter-spacing:.08em}
+.stamp{font-family:var(--mono);font-size:10px;padding:2px 7px;border:1px solid;text-transform:uppercase;letter-spacing:.08em}/* FIX: MED — 9px→10px */
 .stamp.o{border-color:var(--orange);color:var(--orange)}
 .stamp.d{border-color:#555;color:#777}
 
@@ -67,14 +74,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13p
 table{width:100%;border-collapse:collapse;font-size:12px;font-family:var(--mono)}
 th{background:var(--ink);color:var(--bg);padding:4px 8px;text-align:left;font-family:var(--head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;cursor:pointer;user-select:none}
 th:hover{background:#2D2D2D}
-th.sa::after{content:' ▲';color:var(--orange);font-size:9px}
-th.sd::after{content:' ▼';color:var(--orange);font-size:9px}
+th.sa::after{content:' ▲';color:var(--orange);font-size:10px}/* FIX: MED — 9px→10px */
+th.sd::after{content:' ▼';color:var(--orange);font-size:10px}/* FIX: MED — 9px→10px */
 td{padding:3px 8px;border-bottom:1px solid var(--bg3);vertical-align:top;line-height:1.4}
 tr:hover td{background:var(--orange-pale)}
 td b,td strong{font-weight:500}
 
 /* ── RISK TAGS ── */
-.tag{display:inline-block;font-size:9px;font-family:var(--head);font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border:1px solid currentColor}
+.tag{display:inline-block;font-size:10px;font-family:var(--head);font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border:1px solid currentColor}/* FIX: MED — 9px→10px */
 .tag.H{color:var(--red);border-color:var(--red)}
 .tag.M{color:var(--orange);border-color:var(--orange)}
 .tag.L{color:var(--green);border-color:var(--green)}
@@ -97,7 +104,7 @@ td b,td strong{font-weight:500}
 pre{background:var(--code-bg);color:var(--code-fg);padding:9px 12px;overflow-x:auto;font-family:var(--mono);font-size:11px;line-height:1.55;margin-bottom:8px;border-left:3px solid var(--orange)}
 code{font-family:var(--mono);font-size:11px;background:rgba(0,0,0,.09);padding:1px 3px}
 pre code{background:none;padding:0;font-size:inherit}
-.clang{font-family:var(--head);font-size:9px;font-weight:700;text-transform:uppercase;color:var(--orange);letter-spacing:.1em;margin-bottom:2px}
+.clang{font-family:var(--head);font-size:10px;font-weight:700;text-transform:uppercase;color:var(--orange);letter-spacing:.1em;margin-bottom:2px}/* FIX: MED — 9px→10px */
 
 /* ── GRID ── */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -109,7 +116,7 @@ pre code{background:none;padding:0;font-size:inherit}
 .fs{display:flex;gap:0;margin-bottom:12px;border:1px solid var(--ink)}
 .fi{flex:1;padding:6px 10px;border-right:1px solid var(--ink)}
 .fi:last-child{border-right:none}
-.fl{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);font-family:var(--head);font-weight:600}
+.fl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);font-family:var(--head);font-weight:600}/* FIX: MED — 9px→10px */
 .fv{font-family:var(--head);font-size:22px;font-weight:700;color:var(--orange);line-height:1;margin-top:2px}
 .fu{font-size:10px;color:var(--ink2)}
 
@@ -168,12 +175,19 @@ a:hover{text-decoration:underline}
 /* ── HIDDEN (search filter) ── */
 .hidden{display:none}
 
-/* ── RESPONSIVE ── */
+/* ── TOPBAR (mobile) — FIX: CRIT-01 ── */
+#topbar{display:none;position:fixed;top:0;left:0;right:0;height:44px;background:var(--ink);border-bottom:2px solid var(--orange);align-items:center;padding:0 12px;z-index:200;gap:10px}
+#topbar-title{font-family:var(--head);font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;flex:1}
+#hamburger{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}
+#sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150}
+#sb-overlay.vis{display:block}
+
+/* ── RESPONSIVE — FIX: CRIT-01 off-canvas drawer ── */
 @media(max-width:900px){
-  #sb{position:relative;width:100%;height:auto;flex-direction:row;flex-wrap:wrap}
-  #nav{display:flex;flex-wrap:wrap;padding:4px}
-  .ni{flex:none}
-  #main{margin-left:0}
+  #topbar{display:flex}
+  #main{margin-left:0;padding-top:44px}
+  #sb{transform:translateX(-100%);transition:transform .25s ease;z-index:175;flex-direction:column}
+  #sb.open{transform:translateX(0)}
   .g2,.g3,.gas,.gar{grid-template-columns:1fr}
   .src-list{columns:1}
   #ph{grid-template-columns:1fr}
@@ -183,9 +197,44 @@ a:hover{text-decoration:underline}
   .fs{flex-wrap:wrap}
   .fi{min-width:120px}
 }
+
+/* FIX: MED — external link ↗ indicator */
+a[target="_blank"]::after{content:' ↗';font-size:9px;vertical-align:super;opacity:.65}
+.ni a[target="_blank"]::after,.src-list a[target="_blank"]::after{content:none}
+
+/* FIX: LOW — comprehensive print stylesheet */
+@media print{
+  #topbar,#sb,#sb-overlay{display:none!important}
+  #main{margin:0;padding:0}
+  body{background:#fff;color:#000;font-size:10pt;line-height:1.5}
+  #ph{background:#fff;color:#000;border-bottom:2pt solid #000}
+  #ph h1{color:#000}
+  .sec{page-break-inside:avoid;border-bottom:1pt solid #ccc;padding:10pt 16pt}
+  .sec:nth-child(even){background:#fff}
+  pre{white-space:pre-wrap;border:1pt solid #ccc;background:#f5f5f5;color:#000;font-size:8.5pt}
+  a[target="_blank"]::after{content:none}
+  a[href]::after{content:' (' attr(href) ')';font-size:7pt;color:#555;word-break:break-all}
+  .tag{border:1pt solid currentColor;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .bar-f{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .alert{border:1pt solid #999;background:#f9f9f9!important}
+  h1,.st{page-break-after:avoid}
+  table{page-break-inside:avoid;width:100%;border-collapse:collapse}
+  th{background:#f0f0f0!important;color:#000!important;border:1pt solid #ccc}
+  td{border:1pt solid #ccc}
+  .g2,.g3,.gas,.gar{display:block}
+  .src-list{columns:1}
+  .stamp{border:1pt solid #999;color:#333}
+}
 </style>
 </head>
 <body>
+
+<!-- FIX: CRIT-01 — Mobile top bar + overlay -->
+<div id="topbar">
+  <button id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sb">☰</button>
+  <div id="topbar-title">GM Scraping Dossier</div>
+</div>
+<div id="sb-overlay" aria-hidden="true"></div>
 
 <!-- ══════════════ SIDEBAR ══════════════ -->
 <aside id="sb">
@@ -195,10 +244,10 @@ a:hover{text-decoration:underline}
     <div class="meta">Research date: FEB 2026<br>Classification: OPEN</div>
   </div>
   <div id="sw">
-    <input id="search" type="text" placeholder="Search dossier..." autocomplete="off" spellcheck="false">
+    <input id="search" type="text" placeholder="Search dossier..." autocomplete="off" spellcheck="false" aria-label="Search dossier"><!-- FIX: HIGH-A11Y -->
     <div id="sc"></div>
   </div>
-  <nav id="nav">
+  <nav id="nav" aria-label="Section navigation"><!-- FIX: HIGH-A11Y -->
     <a class="ni" href="#s0"><span class="nn">00</span>Executive Summary</a>
     <a class="ni" href="#s1"><span class="nn">01</span>Official API</a>
     <a class="ni" href="#s2"><span class="nn">02</span>Third-Party Services</a>
@@ -221,7 +270,7 @@ a:hover{text-decoration:underline}
 <!-- PAGE HEADER -->
 <div id="ph">
   <div>
-    <h1>Google Maps Scraping<br>Field Research Report</h1>
+    <h1>Google Maps Scraping <br>Field Research Report</h1><!-- FIX: MED — space before br -->
     <div class="sub">Scope: Official APIs · Third-party tools · Open-source libraries · Browser automation<br>Reverse engineering · Anti-detection · Data extraction · Legal considerations · Scalability</div>
   </div>
   <div class="stamps">
@@ -275,7 +324,7 @@ a:hover{text-decoration:underline}
     <div class="sub-t">Available APIs</div>
     <div class="tw">
       <table id="t-apis">
-        <thead><tr><th onclick="sortTable('t-apis',0)">API</th><th onclick="sortTable('t-apis',1)">Purpose</th><th onclick="sortTable('t-apis',2)">Status</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-apis',0)">API</th><th scope="col" onclick="sortTable('t-apis',1)">Purpose</th><th scope="col" onclick="sortTable('t-apis',2)">Status</th></tr></thead>
         <tbody>
           <tr><td><strong>Places API (New)</strong></td><td>Search for places, get place details, photos, autocomplete</td><td><span class="tag NW">Current</span></td></tr>
           <tr><td><strong>Geocoding API</strong></td><td>Convert addresses ↔ coordinates</td><td><span class="tag NW">Current</span></td></tr>
@@ -294,14 +343,14 @@ a:hover{text-decoration:underline}
 
     <div class="fb">
       <span class="fb-l">Filter tier:</span>
-      <button class="fb-b on" onclick="filterPricingTier('all',this)">All</button>
-      <button class="fb-b" onclick="filterPricingTier('essentials',this)">Essentials</button>
-      <button class="fb-b" onclick="filterPricingTier('pro',this)">Pro</button>
-      <button class="fb-b" onclick="filterPricingTier('enterprise',this)">Enterprise</button>
+      <button type="button" class="fb-b on" onclick="filterPricingTier('all',this)">All</button>
+      <button type="button" class="fb-b" onclick="filterPricingTier('essentials',this)">Essentials</button>
+      <button type="button" class="fb-b" onclick="filterPricingTier('pro',this)">Pro</button>
+      <button type="button" class="fb-b" onclick="filterPricingTier('enterprise',this)">Enterprise</button>
     </div>
     <div class="tw">
       <table id="t-pricing">
-        <thead><tr><th onclick="sortTable('t-pricing',0)">SKU</th><th onclick="sortTable('t-pricing',1)">Tier</th><th onclick="sortTable('t-pricing',2)">Free Cap/Month</th><th onclick="sortTable('t-pricing',3)">$/1K (≤100K)</th><th onclick="sortTable('t-pricing',4)">$/1K (5M+)</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-pricing',0)">SKU</th><th scope="col" onclick="sortTable('t-pricing',1)">Tier</th><th scope="col" onclick="sortTable('t-pricing',2)">Free Cap/Month</th><th scope="col" onclick="sortTable('t-pricing',3)">$/1K (≤100K)</th><th scope="col" onclick="sortTable('t-pricing',4)">$/1K (5M+)</th></tr></thead>
         <tbody>
           <tr data-tier="essentials"><td>Autocomplete Requests</td><td><span class="tag L">Essentials</span></td><td>10,000</td><td>$2.83</td><td>$0.21</td></tr>
           <tr data-tier="essentials"><td>Geocoding</td><td><span class="tag L">Essentials</span></td><td>10,000</td><td>$5.00</td><td>$0.38</td></tr>
@@ -376,23 +425,23 @@ a:hover{text-decoration:underline}
     <div class="sub-t">Comparison Matrix</div>
     <div class="fb">
       <span class="fb-l">Filter by scale:</span>
-      <button class="fb-b on" onclick="filterServices('all',this)">All</button>
-      <button class="fb-b" onclick="filterServices('high',this)">High scale</button>
-      <button class="fb-b" onclick="filterServices('medium',this)">Medium scale</button>
-      <button class="fb-b" onclick="filterServices('enterprise',this)">Enterprise</button>
-      <button class="fb-b" onclick="filterServices('api',this)">Has API</button>
+      <button type="button" class="fb-b on" onclick="filterServices('all',this)">All</button>
+      <button type="button" class="fb-b" onclick="filterServices('high',this)">High scale</button>
+      <button type="button" class="fb-b" onclick="filterServices('medium',this)">Medium scale</button>
+      <button type="button" class="fb-b" onclick="filterServices('enterprise',this)">Enterprise</button>
+      <button type="button" class="fb-b" onclick="filterServices('api',this)">Has API</button>
     </div>
     <div class="tw">
       <table id="t-services">
         <thead><tr>
-          <th onclick="sortTable('t-services',0)">Service</th>
-          <th onclick="sortTable('t-services',1)">Model</th>
-          <th onclick="sortTable('t-services',2)">$/1K Places</th>
-          <th onclick="sortTable('t-services',3)">Free Tier</th>
-          <th onclick="sortTable('t-services',4)">API Access</th>
-          <th onclick="sortTable('t-services',5)">Reviews</th>
-          <th onclick="sortTable('t-services',6)">Scale</th>
-          <th onclick="sortTable('t-services',7)">Risk</th>
+          <th scope="col" onclick="sortTable('t-services',0)">Service</th>
+          <th scope="col" onclick="sortTable('t-services',1)">Model</th>
+          <th scope="col" onclick="sortTable('t-services',2)">$/1K Places</th>
+          <th scope="col" onclick="sortTable('t-services',3)">Free Tier</th>
+          <th scope="col" onclick="sortTable('t-services',4)">API Access</th>
+          <th scope="col" onclick="sortTable('t-services',5)">Reviews</th>
+          <th scope="col" onclick="sortTable('t-services',6)">Scale</th>
+          <th scope="col" onclick="sortTable('t-services',7)">Risk</th>
         </tr></thead>
         <tbody>
           <tr data-scale="high" data-api="yes" class="xref-row" data-svc="outscraper">
@@ -495,7 +544,7 @@ a:hover{text-decoration:underline}
     <div class="sub-t">Python Libraries</div>
     <div class="tw">
       <table id="t-pylibs">
-        <thead><tr><th onclick="sortTable('t-pylibs',0)">Library</th><th onclick="sortTable('t-pylibs',1)">Install</th><th onclick="sortTable('t-pylibs',2)">Version (2025)</th><th onclick="sortTable('t-pylibs',3)">Purpose</th><th onclick="sortTable('t-pylibs',4)">Best For</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-pylibs',0)">Library</th><th scope="col" onclick="sortTable('t-pylibs',1)">Install</th><th scope="col" onclick="sortTable('t-pylibs',2)">Version (2025)</th><th scope="col" onclick="sortTable('t-pylibs',3)">Purpose</th><th scope="col" onclick="sortTable('t-pylibs',4)">Best For</th></tr></thead>
         <tbody>
           <tr><td><strong>googlemaps</strong></td><td><code>pip install googlemaps</code></td><td>&ge;4.10</td><td>Official API wrapper</td><td>Legal structured access with API key</td></tr>
           <tr><td><strong>playwright</strong></td><td><code>pip install playwright &amp;&amp; playwright install</code></td><td>&ge;1.49</td><td>Browser automation (Chromium/Firefox/WebKit)</td><td>JS-heavy pages, dynamic content, stealth</td></tr>
@@ -552,7 +601,7 @@ encoded = decoder.encode()</code></pre>
     <div class="sub-t">Node.js / JavaScript Libraries</div>
     <div class="tw">
       <table id="t-jslibs">
-        <thead><tr><th onclick="sortTable('t-jslibs',0)">Library</th><th onclick="sortTable('t-jslibs',1)">Install</th><th onclick="sortTable('t-jslibs',2)">Purpose</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-jslibs',0)">Library</th><th scope="col" onclick="sortTable('t-jslibs',1)">Install</th><th scope="col" onclick="sortTable('t-jslibs',2)">Purpose</th></tr></thead>
         <tbody>
           <tr><td><strong>puppeteer-extra + stealth</strong></td><td><code>npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth</code></td><td>Headless Chrome automation with anti-detection</td></tr>
           <tr><td><strong>playwright (Node)</strong></td><td><code>npm install playwright</code></td><td>Multi-browser automation; better async handling than Puppeteer</td></tr>
@@ -620,7 +669,7 @@ google-maps-scraper \
     <div class="alert"><div class="al">Hard Limit</div>Google Maps displays a maximum of <strong>120 results per search query</strong> in the web interface. To extract more, you must vary search parameters (location, category, zoom level).</div>
     <div class="tw">
       <table id="t-ext">
-        <thead><tr><th onclick="sortTable('t-ext',0)">Extension</th><th onclick="sortTable('t-ext',1)">Key Features</th><th onclick="sortTable('t-ext',2)">Limitations</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-ext',0)">Extension</th><th scope="col" onclick="sortTable('t-ext',1)">Key Features</th><th scope="col" onclick="sortTable('t-ext',2)">Limitations</th></tr></thead>
         <tbody>
           <tr><td><strong>Instant Data Scraper</strong></td><td>AI-powered auto-detection, auto-scroll, CSV/Excel export</td><td>Lower accuracy, limited fields</td></tr>
           <tr><td><strong>G Maps Extractor</strong></td><td>One-click CSV export, reviews, images, phones, emails, social profiles</td><td>120 results per search hard limit</td></tr>
@@ -785,7 +834,7 @@ await page.add_init_script("""
     <p class="sm">Google Maps uses <strong>Protocol Buffers (protobuf)</strong> extensively for data serialization. The web client communicates with backend services via several internal endpoints observed as of 2025:</p>
     <div class="tw">
       <table id="t-endpoints">
-        <thead><tr><th onclick="sortTable('t-endpoints',0)">Endpoint</th><th onclick="sortTable('t-endpoints',1)">Purpose</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-endpoints',0)">Endpoint</th><th scope="col" onclick="sortTable('t-endpoints',1)">Purpose</th></tr></thead>
         <tbody>
           <tr><td><code>/maps/preview/place</code></td><td>Place details (legacy)</td></tr>
           <tr><td><code>/maps/api/place/js/</code></td><td>Place data via internal JS API</td></tr>
@@ -884,7 +933,7 @@ response = requests.get(url, headers=headers)
     <p class="sm">Google's primary anti-scraping system uses invisible JavaScript challenges that analyze behavioral signals:</p>
     <div class="tw">
       <table id="t-sg">
-        <thead><tr><th onclick="sortTable('t-sg',0)">Detection Category</th><th onclick="sortTable('t-sg',1)">What It Measures</th><th onclick="sortTable('t-sg',2)">Bot Threshold</th><th onclick="sortTable('t-sg',3)">Human Range</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-sg',0)">Detection Category</th><th scope="col" onclick="sortTable('t-sg',1)">What It Measures</th><th scope="col" onclick="sortTable('t-sg',2)">Bot Threshold</th><th scope="col" onclick="sortTable('t-sg',3)">Human Range</th></tr></thead>
         <tbody>
           <tr><td><strong>Mouse Movement</strong></td><td>Trajectory, velocity, acceleration, micro-tremors</td><td>Velocity variance &lt; 10</td><td>Variance 50–500</td></tr>
           <tr><td><strong>Keyboard Rhythm</strong></td><td>Inter-key intervals, press duration, error patterns</td><td>Duration variance &lt; 5ms</td><td>20–50ms variance</td></tr>
@@ -917,7 +966,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Proxy Types — Effectiveness for Google Maps</div>
     <div class="tw">
       <table id="t-proxy">
-        <thead><tr><th onclick="sortTable('t-proxy',0)">Type</th><th onclick="sortTable('t-proxy',1)">Detection Risk</th><th onclick="sortTable('t-proxy',2)">Cost</th><th onclick="sortTable('t-proxy',3)">Best For</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-proxy',0)">Type</th><th scope="col" onclick="sortTable('t-proxy',1)">Detection Risk</th><th scope="col" onclick="sortTable('t-proxy',2)">Cost</th><th scope="col" onclick="sortTable('t-proxy',3)">Best For</th></tr></thead>
         <tbody>
           <tr><td><strong>Mobile</strong></td><td><span class="tag L">Lowest</span></td><td>$10–$25/GB</td><td>High-value targets, best evasion</td></tr>
           <tr><td><strong>Residential</strong></td><td><span class="tag L">Low</span></td><td>$3.50–$15/GB</td><td>Production scraping</td></tr>
@@ -932,7 +981,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Proxy Providers</div>
     <div class="tw">
       <table id="t-proxyprov">
-        <thead><tr><th onclick="sortTable('t-proxyprov',0)">Provider</th><th onclick="sortTable('t-proxyprov',1)">Pool Size</th><th onclick="sortTable('t-proxyprov',2)">Starting Price</th><th onclick="sortTable('t-proxyprov',3)">Key Feature</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-proxyprov',0)">Provider</th><th scope="col" onclick="sortTable('t-proxyprov',1)">Pool Size</th><th scope="col" onclick="sortTable('t-proxyprov',2)">Starting Price</th><th scope="col" onclick="sortTable('t-proxyprov',3)">Key Feature</th></tr></thead>
         <tbody>
           <tr><td><strong>Bright Data</strong></td><td>72M+ residential</td><td>$8.40/GB</td><td>Largest network, city-level targeting</td></tr>
           <tr><td><strong>Oxylabs</strong></td><td>175M residential</td><td>Custom</td><td>99.1% success rate, ZIP-code targeting</td></tr>
@@ -949,7 +998,7 @@ response = requests.get(url, headers=headers)
       <div class="sub-t">CAPTCHA Solving Services</div>
       <div class="tw">
         <table id="t-captcha">
-          <thead><tr><th onclick="sortTable('t-captcha',0)">Service</th><th onclick="sortTable('t-captcha',1)">Method</th><th onclick="sortTable('t-captcha',2)">Accuracy</th><th onclick="sortTable('t-captcha',3)">Cost</th></tr></thead>
+          <thead><tr><th scope="col" onclick="sortTable('t-captcha',0)">Service</th><th scope="col" onclick="sortTable('t-captcha',1)">Method</th><th scope="col" onclick="sortTable('t-captcha',2)">Accuracy</th><th scope="col" onclick="sortTable('t-captcha',3)">Cost</th></tr></thead>
           <tbody>
             <tr><td><strong>2Captcha</strong></td><td>Human workers</td><td>85–99%</td><td>$1–3/1K</td></tr>
             <tr><td><strong>Anti-Captcha</strong></td><td>Human + AI hybrid</td><td>90–99%</td><td>$1–2/1K</td></tr>
@@ -964,7 +1013,7 @@ response = requests.get(url, headers=headers)
       <div class="sub-t">Rate Limiting Thresholds (Observed)</div>
       <div class="tw">
         <table id="t-rl">
-          <thead><tr><th onclick="sortTable('t-rl',0)">Behavior</th><th onclick="sortTable('t-rl',1)">Threshold</th><th onclick="sortTable('t-rl',2)">Consequence</th></tr></thead>
+          <thead><tr><th scope="col" onclick="sortTable('t-rl',0)">Behavior</th><th scope="col" onclick="sortTable('t-rl',1)">Threshold</th><th scope="col" onclick="sortTable('t-rl',2)">Consequence</th></tr></thead>
           <tbody>
             <tr><td>Rapid sequential requests</td><td>&gt;30 req/min per IP</td><td>Temporary CAPTCHA</td></tr>
             <tr><td>Sustained high volume</td><td>&gt;500 req/hr per IP</td><td>IP blocked 15–60 min</td></tr>
@@ -986,17 +1035,17 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Extractable Fields by Method</div>
     <div class="fb">
       <span class="fb-l">Filter:</span>
-      <button class="fb-b on" onclick="filterFields('all',this)">All Fields</button>
-      <button class="fb-b" onclick="filterFields('api-yes',this)">Available via API</button>
-      <button class="fb-b" onclick="filterFields('api-no',this)">Not in API</button>
+      <button type="button" class="fb-b on" onclick="filterFields('all',this)">All Fields</button>
+      <button type="button" class="fb-b" onclick="filterFields('api-yes',this)">Available via API</button>
+      <button type="button" class="fb-b" onclick="filterFields('api-no',this)">Not in API</button>
     </div>
     <div class="tw">
       <table id="t-fields">
         <thead><tr>
-          <th onclick="sortTable('t-fields',0)">Data Field</th>
-          <th onclick="sortTable('t-fields',1)">Official API</th>
-          <th onclick="sortTable('t-fields',2)">Browser Automation</th>
-          <th onclick="sortTable('t-fields',3)">Third-Party Service</th>
+          <th scope="col" onclick="sortTable('t-fields',0)">Data Field</th>
+          <th scope="col" onclick="sortTable('t-fields',1)">Official API</th>
+          <th scope="col" onclick="sortTable('t-fields',2)">Browser Automation</th>
+          <th scope="col" onclick="sortTable('t-fields',3)">Third-Party Service</th>
         </tr></thead>
         <tbody>
           <tr data-api="yes"><td><strong>Business Name</strong></td><td><span class="my">Yes (Basic)</span></td><td><span class="my">Yes</span></td><td><span class="my">Yes</span></td></tr>
@@ -1031,7 +1080,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Best Method by Use Case</div>
     <div class="tw">
       <table id="t-usecase">
-        <thead><tr><th onclick="sortTable('t-usecase',0)">Use Case</th><th onclick="sortTable('t-usecase',1)">Scale</th><th onclick="sortTable('t-usecase',2)">Recommended Method</th><th onclick="sortTable('t-usecase',3)">Reason</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-usecase',0)">Use Case</th><th scope="col" onclick="sortTable('t-usecase',1)">Scale</th><th scope="col" onclick="sortTable('t-usecase',2)">Recommended Method</th><th scope="col" onclick="sortTable('t-usecase',3)">Reason</th></tr></thead>
         <tbody>
           <tr><td><strong>Small batch</strong></td><td>&lt;500 places</td><td>Chrome extension or Outscraper free tier</td><td>Zero cost, minimal setup</td></tr>
           <tr><td><strong>Moderate scale</strong></td><td>500–50K</td><td>Outscraper or Apify</td><td>Cost-effective, reliable, no maintenance</td></tr>
@@ -1060,7 +1109,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Legal Precedents</div>
     <div class="tw">
       <table id="t-legal">
-        <thead><tr><th onclick="sortTable('t-legal',0)">Case</th><th onclick="sortTable('t-legal',1)">Year</th><th onclick="sortTable('t-legal',2)">Ruling / Status</th><th onclick="sortTable('t-legal',3)">Relevance to Scraping</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-legal',0)">Case</th><th scope="col" onclick="sortTable('t-legal',1)">Year</th><th scope="col" onclick="sortTable('t-legal',2)">Ruling / Status</th><th scope="col" onclick="sortTable('t-legal',3)">Relevance to Scraping</th></tr></thead>
         <tbody>
           <tr><td><strong>HiQ v. LinkedIn</strong></td><td>2019/2022</td><td>Scraping publicly available data does not violate CFAA</td><td><span class="tag L">Supports</span> scraping public data</td></tr>
           <tr><td><strong>Van Buren v. United States</strong></td><td>2021</td><td>SCOTUS narrowed CFAA — "improper use" ≠ "unauthorized access"</td><td><span class="tag L">Limits</span> what constitutes "hacking"</td></tr>
@@ -1092,7 +1141,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">GDPR Implications (European Operations)</div>
     <div class="tw">
       <table id="t-gdpr">
-        <thead><tr><th onclick="sortTable('t-gdpr',0)">Data Type</th><th onclick="sortTable('t-gdpr',1)">GDPR Risk</th><th onclick="sortTable('t-gdpr',2)">Guidance</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-gdpr',0)">Data Type</th><th scope="col" onclick="sortTable('t-gdpr',1)">GDPR Risk</th><th scope="col" onclick="sortTable('t-gdpr',2)">Guidance</th></tr></thead>
         <tbody>
           <tr><td>Business names and addresses</td><td><span class="tag L">Low</span></td><td>Corporate entities lack personal privacy rights</td></tr>
           <tr><td>Owner/manager personal names</td><td><span class="tag M">Medium</span></td><td>May constitute personal data for sole traders</td></tr>
@@ -1125,7 +1174,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Practical Risk Assessment</div>
     <div class="tw">
       <table id="t-risk">
-        <thead><tr><th onclick="sortTable('t-risk',0)">Activity</th><th onclick="sortTable('t-risk',1)">Legal Risk</th><th onclick="sortTable('t-risk',2)">Technical Risk</th><th onclick="sortTable('t-risk',3)">Practical Risk</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-risk',0)">Activity</th><th scope="col" onclick="sortTable('t-risk',1)">Legal Risk</th><th scope="col" onclick="sortTable('t-risk',2)">Technical Risk</th><th scope="col" onclick="sortTable('t-risk',3)">Practical Risk</th></tr></thead>
         <tbody>
           <tr><td>Using official API within ToS</td><td><span class="tag N">None</span></td><td><span class="tag N">None</span></td><td><span class="tag N">None</span></td></tr>
           <tr><td>Scraping public business data (names, addresses)</td><td><span class="tag L">Low</span></td><td><span class="tag M">Medium</span></td><td><span class="tag L">Low–Medium</span></td></tr>
@@ -1183,7 +1232,7 @@ response = requests.get(url, headers=headers)
     <div class="sub-t">Performance Benchmarks (1M Places)</div>
     <div class="tw">
       <table id="t-perf">
-        <thead><tr><th onclick="sortTable('t-perf',0)">Approach</th><th onclick="sortTable('t-perf',1)">Throughput</th><th onclick="sortTable('t-perf',2)">Resource Usage</th><th onclick="sortTable('t-perf',3)">Est. Cost (1M places)</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-perf',0)">Approach</th><th scope="col" onclick="sortTable('t-perf',1)">Throughput</th><th scope="col" onclick="sortTable('t-perf',2)">Resource Usage</th><th scope="col" onclick="sortTable('t-perf',3)">Est. Cost (1M places)</th></tr></thead>
         <tbody>
           <tr><td><strong>Official API (Pro tier)</strong></td><td>6,000 QPM</td><td>Minimal (API calls)</td><td>~$17,000</td></tr>
           <tr><td><strong>Single Playwright instance</strong></td><td>5–10 places/min</td><td>500MB–1GB RAM</td><td>$0 + proxy costs</td></tr>
@@ -1257,7 +1306,7 @@ DO UPDATE SET
     <div class="sub-t">Major Changes by Google — Chronological</div>
     <div class="tw">
       <table id="t-changes">
-        <thead><tr><th onclick="sortTable('t-changes',0)">Date</th><th onclick="sortTable('t-changes',1)">Change</th><th onclick="sortTable('t-changes',2)">Impact</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-changes',0)">Date</th><th scope="col" onclick="sortTable('t-changes',1)">Change</th><th scope="col" onclick="sortTable('t-changes',2)">Impact</th></tr></thead>
         <tbody>
           <tr><td><strong>Jan 2025</strong></td><td>SearchGuard deployment</td><td>Broke most SERP scrapers overnight</td></tr>
           <tr><td><strong>Mar 2025</strong></td><td>Places API pricing restructure</td><td>New tiered SKU system, removed $200 credit</td></tr>
@@ -1312,7 +1361,7 @@ DO UPDATE SET
     <div class="sub-t">Emerging Trends (2025–2026)</div>
     <div class="tw">
       <table id="t-trends">
-        <thead><tr><th onclick="sortTable('t-trends',0)">#</th><th onclick="sortTable('t-trends',1)">Trend</th><th onclick="sortTable('t-trends',2)">Description</th></tr></thead>
+        <thead><tr><th scope="col" onclick="sortTable('t-trends',0)">#</th><th scope="col" onclick="sortTable('t-trends',1)">Trend</th><th scope="col" onclick="sortTable('t-trends',2)">Description</th></tr></thead>
         <tbody>
           <tr><td>1</td><td><strong>AI-Assisted Scraping</strong></td><td>LLMs parse unstructured page content, adapt to DOM changes, and generate selectors dynamically</td></tr>
           <tr><td>2</td><td><strong>Headless Browser Farms as a Service</strong></td><td>Services like Browserless.io offer managed headless browser infrastructure optimized for scraping</td></tr>
@@ -1368,43 +1417,43 @@ DO UPDATE SET
 <section class="sec" id="s12">
   <div class="sh"><span class="sn">§12</span><span class="st">Sources</span><span class="ss">36 references</span></div>
   <div class="src-list">
-    <div class="src-i"><a href="https://developers.google.com/maps/billing-and-pricing/pricing" target="_blank">Google Maps Platform Pricing</a></div>
-    <div class="src-i"><a href="https://developers.google.com/maps/documentation/places/web-service/usage-and-billing" target="_blank">Places API Usage and Billing</a></div>
-    <div class="src-i"><a href="https://mapsplatform.google.com/pricing/" target="_blank">Google Maps Platform Pricing Overview</a></div>
-    <div class="src-i"><a href="https://masterconcept.ai/news/google-maps-api-2025-complete-guide-to-pricing-policies-business-strategy/" target="_blank">Google Maps API 2025 Complete Guide</a></div>
-    <div class="src-i"><a href="https://outscraper.com/pricing/" target="_blank">Outscraper Pricing</a></div>
-    <div class="src-i"><a href="https://apify.com/compass/crawler-google-places" target="_blank">Apify Google Maps Scraper Actor</a></div>
-    <div class="src-i"><a href="https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing" target="_blank">Apify Pay-Per-Event Pricing</a></div>
-    <div class="src-i"><a href="https://brightdata.com/products/serp-api/google-search/maps" target="_blank">Bright Data SERP API</a></div>
-    <div class="src-i"><a href="https://brightdata.com/pricing/web-scraper" target="_blank">Bright Data Pricing</a></div>
-    <div class="src-i"><a href="https://www.scrapingbee.com/pricing/" target="_blank">ScrapingBee Pricing</a></div>
-    <div class="src-i"><a href="https://scrap.io/google-maps-scraping-complete-guide-business-data-leads-2025" target="_blank">Scrap.io Google Maps Guide</a></div>
-    <div class="src-i"><a href="https://github.com/gosom/google-maps-scraper" target="_blank">gosom/google-maps-scraper (GitHub)</a></div>
-    <div class="src-i"><a href="https://github.com/HasData/google-maps-scraper" target="_blank">HasData/google-maps-scraper (GitHub)</a></div>
-    <div class="src-i"><a href="https://github.com/MrDebugger/deproto" target="_blank">deproto — Protobuf Decoder (GitHub)</a></div>
-    <div class="src-i"><a href="https://github.com/marin-m/pbtk" target="_blank">PBTK — Protobuf Toolkit (GitHub)</a></div>
-    <div class="src-i"><a href="https://github.com/serpapi/google-maps-pb-decoder" target="_blank">SerpApi Protobuf Decoder (GitHub)</a></div>
-    <div class="src-i"><a href="https://serpapi.com/blog/how-we-reverse-engineered-google-maps-pagination/" target="_blank">SerpApi: Reverse Engineering Maps Pagination</a></div>
-    <div class="src-i"><a href="https://searchengineland.com/inside-google-searchguard-467676" target="_blank">Inside SearchGuard — Search Engine Land</a></div>
-    <div class="src-i"><a href="https://trajectdata.com/google-anti-scraping/" target="_blank">Google's Anti-Scraping Changes 2025 — TrajEct Data</a></div>
-    <div class="src-i"><a href="https://blog.google/technology/safety-security/serpapi-lawsuit/" target="_blank">Google v. SerpApi Lawsuit — Google Blog</a></div>
-    <div class="src-i"><a href="https://ipwatchdog.com/2025/12/26/google-sues-serpapi-parasitic-scraping-circumvention-protection-measures/" target="_blank">Google Sues SerpApi — IPWatchdog Analysis</a></div>
-    <div class="src-i"><a href="https://www.theregister.com/2026/02/21/serpapi_google_scraping_lawsuit" target="_blank">SerpApi Motion to Dismiss — The Register</a></div>
-    <div class="src-i"><a href="https://igleads.io/resources/is-it-legal-to-scrape-google-maps/" target="_blank">Is Google Maps Scraping Legal — iGLeads</a></div>
-    <div class="src-i"><a href="https://mapsplatform.google.com/resources/trust-center/gdpr/" target="_blank">Google Maps GDPR Compliance</a></div>
-    <div class="src-i"><a href="https://www.notiq.io/blogs/gdpr-google-maps-ai-lead-generation" target="_blank">GDPR Google Maps AI Lead Generation — Notiq</a></div>
-    <div class="src-i"><a href="https://medium.com/deep-tech-insights/web-scraping-in-2025-the-20-million-gdpr-mistake-you-cant-afford-to-make-07a3ce240f4f" target="_blank">Web Scraping 2025: The €20M GDPR Mistake</a></div>
-    <div class="src-i"><a href="https://decodo.com/blog/how-to-bypass-google-captcha" target="_blank">CAPTCHA Bypass Methods 2026 — Decodo</a></div>
-    <div class="src-i"><a href="https://medium.com/@sohail_saifii/web-scraping-in-2025-bypassing-modern-bot-detection-fcab286b117d" target="_blank">Bypassing Bot Detection 2025 — Medium</a></div>
-    <div class="src-i"><a href="https://proxyempire.io/best-google-maps-proxies/" target="_blank">Best Google Maps Proxies — ProxyEmpire</a></div>
-    <div class="src-i"><a href="https://proxyway.com/best/proxies-for-google-scraping" target="_blank">Proxies for Google Scraping — Proxyway</a></div>
-    <div class="src-i"><a href="https://scrap.io/google-maps-scraper-chrome-extensions-guide" target="_blank">Google Maps Chrome Extensions Guide — Scrap.io</a></div>
-    <div class="src-i"><a href="https://crawlee.dev/blog/scrape-google-maps" target="_blank">Crawlee Google Maps Tutorial</a></div>
-    <div class="src-i"><a href="https://www.zenrows.com/blog/puppeteer-stealth" target="_blank">Puppeteer Stealth Guide — ZenRows</a></div>
-    <div class="src-i"><a href="https://www.zenrows.com/blog/playwright-stealth" target="_blank">Playwright Stealth Guide — ZenRows</a></div>
-    <div class="src-i"><a href="https://www.scraperapi.com/web-scraping/playwright/" target="_blank">Playwright Web Scraping Guide — ScraperAPI</a></div>
-    <div class="src-i"><a href="https://proxyway.com/best/google-maps-scrapers" target="_blank">Best Google Maps Scrapers 2026 — Proxyway</a></div>
-    <div class="src-i"><a href="https://brightdata.com/blog/web-data/best-google-maps-scrapers" target="_blank">Best Google Maps Scrapers — Bright Data</a></div>
+    <div class="src-i"><a href="https://developers.google.com/maps/billing-and-pricing/pricing" target="_blank" rel="noopener noreferrer">Google Maps Platform Pricing</a></div>
+    <div class="src-i"><a href="https://developers.google.com/maps/documentation/places/web-service/usage-and-billing" target="_blank" rel="noopener noreferrer">Places API Usage and Billing</a></div>
+    <div class="src-i"><a href="https://mapsplatform.google.com/pricing/" target="_blank" rel="noopener noreferrer">Google Maps Platform Pricing Overview</a></div>
+    <div class="src-i"><a href="https://masterconcept.ai/news/google-maps-api-2025-complete-guide-to-pricing-policies-business-strategy/" target="_blank" rel="noopener noreferrer">Google Maps API 2025 Complete Guide</a></div>
+    <div class="src-i"><a href="https://outscraper.com/pricing/" target="_blank" rel="noopener noreferrer">Outscraper Pricing</a></div>
+    <div class="src-i"><a href="https://apify.com/compass/crawler-google-places" target="_blank" rel="noopener noreferrer">Apify Google Maps Scraper Actor</a></div>
+    <div class="src-i"><a href="https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing" target="_blank" rel="noopener noreferrer">Apify Pay-Per-Event Pricing</a></div>
+    <div class="src-i"><a href="https://brightdata.com/products/serp-api/google-search/maps" target="_blank" rel="noopener noreferrer">Bright Data SERP API</a></div>
+    <div class="src-i"><a href="https://brightdata.com/pricing/web-scraper" target="_blank" rel="noopener noreferrer">Bright Data Pricing</a></div>
+    <div class="src-i"><a href="https://www.scrapingbee.com/pricing/" target="_blank" rel="noopener noreferrer">ScrapingBee Pricing</a></div>
+    <div class="src-i"><a href="https://scrap.io/google-maps-scraping-complete-guide-business-data-leads-2025" target="_blank" rel="noopener noreferrer">Scrap.io Google Maps Guide</a></div>
+    <div class="src-i"><a href="https://github.com/gosom/google-maps-scraper" target="_blank" rel="noopener noreferrer">gosom/google-maps-scraper (GitHub)</a></div>
+    <div class="src-i"><a href="https://github.com/HasData/google-maps-scraper" target="_blank" rel="noopener noreferrer">HasData/google-maps-scraper (GitHub)</a></div>
+    <div class="src-i"><a href="https://github.com/MrDebugger/deproto" target="_blank" rel="noopener noreferrer">deproto — Protobuf Decoder (GitHub)</a></div>
+    <div class="src-i"><a href="https://github.com/marin-m/pbtk" target="_blank" rel="noopener noreferrer">PBTK — Protobuf Toolkit (GitHub)</a></div>
+    <div class="src-i"><a href="https://github.com/serpapi/google-maps-pb-decoder" target="_blank" rel="noopener noreferrer">SerpApi Protobuf Decoder (GitHub)</a></div>
+    <div class="src-i"><a href="https://serpapi.com/blog/how-we-reverse-engineered-google-maps-pagination/" target="_blank" rel="noopener noreferrer">SerpApi: Reverse Engineering Maps Pagination</a></div>
+    <div class="src-i"><a href="https://searchengineland.com/inside-google-searchguard-467676" target="_blank" rel="noopener noreferrer">Inside SearchGuard — Search Engine Land</a></div>
+    <div class="src-i"><a href="https://trajectdata.com/google-anti-scraping/" target="_blank" rel="noopener noreferrer">Google's Anti-Scraping Changes 2025 — TrajEct Data</a></div>
+    <div class="src-i"><a href="https://blog.google/technology/safety-security/serpapi-lawsuit/" target="_blank" rel="noopener noreferrer">Google v. SerpApi Lawsuit — Google Blog</a></div>
+    <div class="src-i"><a href="https://ipwatchdog.com/2025/12/26/google-sues-serpapi-parasitic-scraping-circumvention-protection-measures/" target="_blank" rel="noopener noreferrer">Google Sues SerpApi — IPWatchdog Analysis</a></div>
+    <div class="src-i"><a href="https://www.theregister.com/2026/02/21/serpapi_google_scraping_lawsuit" target="_blank" rel="noopener noreferrer">SerpApi Motion to Dismiss — The Register</a></div>
+    <div class="src-i"><a href="https://igleads.io/resources/is-it-legal-to-scrape-google-maps/" target="_blank" rel="noopener noreferrer">Is Google Maps Scraping Legal — iGLeads</a></div>
+    <div class="src-i"><a href="https://mapsplatform.google.com/resources/trust-center/gdpr/" target="_blank" rel="noopener noreferrer">Google Maps GDPR Compliance</a></div>
+    <div class="src-i"><a href="https://www.notiq.io/blogs/gdpr-google-maps-ai-lead-generation" target="_blank" rel="noopener noreferrer">GDPR Google Maps AI Lead Generation — Notiq</a></div>
+    <div class="src-i"><a href="https://medium.com/deep-tech-insights/web-scraping-in-2025-the-20-million-gdpr-mistake-you-cant-afford-to-make-07a3ce240f4f" target="_blank" rel="noopener noreferrer">Web Scraping 2025: The €20M GDPR Mistake</a></div>
+    <div class="src-i"><a href="https://decodo.com/blog/how-to-bypass-google-captcha" target="_blank" rel="noopener noreferrer">CAPTCHA Bypass Methods 2026 — Decodo</a></div>
+    <div class="src-i"><a href="https://medium.com/@sohail_saifii/web-scraping-in-2025-bypassing-modern-bot-detection-fcab286b117d" target="_blank" rel="noopener noreferrer">Bypassing Bot Detection 2025 — Medium</a></div>
+    <div class="src-i"><a href="https://proxyempire.io/best-google-maps-proxies/" target="_blank" rel="noopener noreferrer">Best Google Maps Proxies — ProxyEmpire</a></div>
+    <div class="src-i"><a href="https://proxyway.com/best/proxies-for-google-scraping" target="_blank" rel="noopener noreferrer">Proxies for Google Scraping — Proxyway</a></div>
+    <div class="src-i"><a href="https://scrap.io/google-maps-scraper-chrome-extensions-guide" target="_blank" rel="noopener noreferrer">Google Maps Chrome Extensions Guide — Scrap.io</a></div>
+    <div class="src-i"><a href="https://crawlee.dev/blog/scrape-google-maps" target="_blank" rel="noopener noreferrer">Crawlee Google Maps Tutorial</a></div>
+    <div class="src-i"><a href="https://www.zenrows.com/blog/puppeteer-stealth" target="_blank" rel="noopener noreferrer">Puppeteer Stealth Guide — ZenRows</a></div>
+    <div class="src-i"><a href="https://www.zenrows.com/blog/playwright-stealth" target="_blank" rel="noopener noreferrer">Playwright Stealth Guide — ZenRows</a></div>
+    <div class="src-i"><a href="https://www.scraperapi.com/web-scraping/playwright/" target="_blank" rel="noopener noreferrer">Playwright Web Scraping Guide — ScraperAPI</a></div>
+    <div class="src-i"><a href="https://proxyway.com/best/google-maps-scrapers" target="_blank" rel="noopener noreferrer">Best Google Maps Scrapers 2026 — Proxyway</a></div>
+    <div class="src-i"><a href="https://brightdata.com/blog/web-data/best-google-maps-scrapers" target="_blank" rel="noopener noreferrer">Best Google Maps Scrapers — Bright Data</a></div>
   </div>
 </section>
 
@@ -1551,6 +1600,33 @@ searchInput.addEventListener('input', () => {
   }, 150);
 });
 
+// FIX: CRIT-01 — Mobile sidebar toggle
+(function(){
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sb');
+  const overlay   = document.getElementById('sb-overlay');
+  if (!hamburger || !sidebar || !overlay) return;
+  function openSb() {
+    sidebar.classList.add('open');
+    overlay.classList.add('vis');
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  function closeSb() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('vis');
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  hamburger.addEventListener('click', () =>
+    sidebar.classList.contains('open') ? closeSb() : openSb());
+  overlay.addEventListener('click', closeSb);
+  document.querySelectorAll('.ni').forEach(link =>
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) closeSb();
+    })
+  );
+})();
+
+// FIX: LOW — IntersectionObserver for scroll-driven active nav states
 // ── ACTIVE SECTION HIGHLIGHT ──
 const sections = document.querySelectorAll('.sec');
 const navLinks = document.querySelectorAll('.ni');
