@@ -33,8 +33,6 @@ Agent: Claude Code
 - None
 
 ## Backlog
-- [P3] `server_tokens off` (may already be handled at SWAG level)
-- [P3] Google Fonts preload trick (currently render-blocking stylesheet in <head>)
 - [P3] Section headings are divs with classes, not semantic h2/h3 — design intent
 
 ## Done
@@ -44,6 +42,8 @@ Agent: Claude Code
 - [x] README.md added — 2026-03-09
 - [x] Add docker-compose.yml with SWAG labels, swag-network, 128m memory limit — 2026-03-10 — commit 333a600
 - [x] UX/UI: contrast on dark bg bumped (#555/#666/#777/#888 → #999), canonical filled, og:url added — 2026-03-10 — commit a3271c5
+- [x] nginx: add server_tokens off — 2026-03-10
+- [x] Fonts: switch Google Fonts to async preload (non-render-blocking) — 2026-03-10
 
 ## Decisions Log
 - "Port 8080 left as-is — both Dockerfile and nginx.conf use 8080, changing to 80 could break live deployment. Documented but not changed." (2026-03-09)
