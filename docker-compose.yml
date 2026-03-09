@@ -1,0 +1,24 @@
+services:
+  gmaps-dossier:
+    build: .
+    image: gmaps-dossier
+    container_name: gmaps-dossier
+    restart: unless-stopped
+    networks:
+      - swag-network
+    mem_limit: 128m
+    labels:
+      - "swag=enable"
+      - "swag_address=gmaps-dossier"
+      - "swag_port=8080"
+      - "swag_url=gmaps-dossier.shellnode.lol"
+      - "homepage.instance=my-vps"
+      - "homepage.name=GMaps Dossier"
+      - "homepage.group=Tools"
+      - "homepage.href=https://gmaps-dossier.shellnode.lol"
+      - "homepage.icon=mdi-map-search"
+      - "homepage.description=Google Maps scraping research dossier"
+
+networks:
+  swag-network:
+    external: true
