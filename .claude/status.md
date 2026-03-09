@@ -33,7 +33,6 @@ Agent: Claude Code
 - None
 
 ## Backlog
-- [P3] docker-compose.yml with SWAG labels and memory limit
 - [P3] `server_tokens off` (may already be handled at SWAG level)
 - [P3] Google Fonts preload trick (currently render-blocking stylesheet in <head>)
 - [P3] Section headings are divs with classes, not semantic h2/h3 — design intent
@@ -43,6 +42,7 @@ Agent: Claude Code
 - [x] .gitignore added — 2026-03-09
 - [x] nginx.conf hardened (Permissions-Policy, always keyword, gzip, dotfile block) — 2026-03-09
 - [x] README.md added — 2026-03-09
+- [x] Add docker-compose.yml with SWAG labels, swag-network, 128m memory limit — 2026-03-10 — commit 333a600
 - [x] UX/UI: contrast on dark bg bumped (#555/#666/#777/#888 → #999), canonical filled, og:url added — 2026-03-10 — commit a3271c5
 
 ## Decisions Log
